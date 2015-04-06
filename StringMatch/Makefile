@@ -1,7 +1,7 @@
 CXX = g++
 
 OBJECTS = main.o detectToken.o bruteForce.o kmp.o sunday.o
-CXXFLAGS += $(INCLUDES) -m32 -g -O3
+CXXFLAGS += $(INCLUDES) -g -O3
 
 detectToken : $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o detectToken
@@ -22,6 +22,9 @@ kmp.o : kmp.cpp stringMatching.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 sunday.o : sunday.cpp stringMatching.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	
+bm.o : bm.cpp stringMatching.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 clean:	

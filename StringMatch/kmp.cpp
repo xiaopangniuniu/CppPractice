@@ -25,19 +25,19 @@ char *kmp(const char* pText, const char* pPattern)
 	if (pLen == j)
 		return (char*)(pText+i-pLen);
 	else
-		return NULL:
+		return NULL;
 }
 
 void getNext (const char *pPattern, int *pNext)
 {
     int pLen = strlen(pPattern);
-	next[0] = -1;
+	pNext[0] = -1;
     int k(-1), j(0);
     while(j < pLen-1)
     {
-        if(pt[k] == pt[j] || -1 == k)
-            next[++j] = ++k;
+        if(pPattern[k] == pPattern[j] || -1 == k)
+            pNext[++j] = ++k;
         else
-            k = next[k]; //k = next[next[j]] = next[k];
+            k = pNext[k]; //k = pNext[pNext[j]] = pNext[k];
     }
 }

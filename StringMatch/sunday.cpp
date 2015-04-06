@@ -36,7 +36,6 @@ char *sunday (const char *pText, const char *pPattern)
 
         text += shift_table[text[pattern_len]];
     }
-
-
+	
     return NULL;
 }
