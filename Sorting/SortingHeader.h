@@ -12,4 +12,6 @@ void Qsort(vector<int> &list, int low, int high);
 void QuickSort(vector<int> &list);
 
 void SelectSorting(vector<int> &list);
+void HeapAdjust(vector<int> &list, int root, int last);
+void HeapSort(vector<int> &list);
 #endif
