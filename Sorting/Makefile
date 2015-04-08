@@ -1,6 +1,6 @@
 CXX = g++
 
-OBJECTS = main.o insertSort.o exchangeSort.o selectSort.o
+OBJECTS = main.o insertSort.o exchangeSort.o selectSort.o mergeSort.o
 CXXFLAGS += $(INCLUDES) -g -O3
 
 sorting : $(OBJECTS)
@@ -19,6 +19,9 @@ exchangeSort.o : ExchangeSort.cpp SortingHeader.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 selectSort.o : SelectSort.cpp SortingHeader.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+	
+mergeSort.o : MergeSorting.cpp SortingHeader.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 clean:	

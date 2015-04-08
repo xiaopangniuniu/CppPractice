@@ -17,5 +17,7 @@ int main(void)
 	QuickSort(list);
 
 	SelectSorting(list);
+	HeapSort(list);
+	MergeSorting(list);
 	return 0;
 }
