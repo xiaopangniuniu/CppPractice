@@ -38,7 +38,8 @@ void MergePass(vector<int> &initList, vector<int> &mergeList, int subLen)
 
 // 完成一次2路归并，即两个有序list merge成一个有序list
 // left..mid, mid+1..right
-void Merge(vector<int> &initList, vector<int> &mergeList, int left, int mid, int right)
+void Merge(vector<int> &initList, vector<int> &mergeList, 
+           int left, int mid, int right)
 {
 	int i = left, j = mid+1, k = i;
 	while (i < mid+1 && j < right+1)
