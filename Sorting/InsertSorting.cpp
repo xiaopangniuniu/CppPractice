@@ -27,9 +27,9 @@ void BinInsertSorting(vector<int> &list)
 		while (low <= high)
 		{
 			mid = (low+high) / 2;
-			if (temp > mid)
+			if (temp > list[mid])
 				low = mid + 1;
-			else if (temp < mid)
+			else if (temp < list[mid])
 				high = mid - 1;
 			else // mid == temp
 				break;
