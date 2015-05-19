@@ -23,7 +23,13 @@ int main()
 	cout << "\n\nTraverseBinTreePostOrder: " << endl;
 	TraverseBinTreePostOrder(binTree);
 	cout << "\n\nBreadthFirstTraverse: " << endl;
-	BreadthFirstTraverse(binTree);
+	BreadthFirstTraverse(binTree);	
+	// 删除树
+
+	// CreateBinTreeLevelOrder() 按层建树，填上level ——这种方法比较符合认知
+	// 深度遍历，填上pos
+	// 层序遍历，画树：printTree()
+
 	return 0;
 }
 
@@ -68,7 +74,7 @@ void TraverseBinTreeInOrder(BinTreeNode* binTree)
 	TraverseBinTreeInOrder(binTree->lChild);
 	// Visit(T)
 	binTree->pos = pos++;
-	cout << binTree->datum;
+	cout << binTree->datum << " pos: " << binTree->pos << " ";
 	TraverseBinTreeInOrder(binTree->rChild);
 }
 
