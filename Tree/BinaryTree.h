@@ -7,6 +7,8 @@ public:
 	BinTreeNode();
 
 	char datum;
+	int level;
+	int pos;
 	BinTreeNode* lChild;
 	BinTreeNode* rChild;
 }; // ... end of BinTreeNode
