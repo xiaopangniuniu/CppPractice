@@ -23,13 +23,7 @@ int main()
 	cout << "\n\nTraverseBinTreePostOrder: " << endl;
 	TraverseBinTreePostOrder(binTree);
 	cout << "\n\nBreadthFirstTraverse: " << endl;
-	BreadthFirstTraverse(binTree);	
-	// 删除树
-
-	// CreateBinTreeLevelOrder() 按层建树，填上level ——这种方法比较符合认知
-	// 深度遍历，填上pos
-	// 层序遍历，画树：printTree()
-
+	BreadthFirstTraverse(binTree);
 	return 0;
 }
 
@@ -73,8 +67,6 @@ void TraverseBinTreeInOrder(BinTreeNode* binTree)
 	static int pos = 0;
 	TraverseBinTreeInOrder(binTree->lChild);
 	// Visit(T)
-	binTree->pos = pos++;
-	cout << binTree->datum << " pos: " << binTree->pos << " ";
 	TraverseBinTreeInOrder(binTree->rChild);
 }
 
@@ -89,15 +81,12 @@ void TraverseBinTreePostOrder(BinTreeNode* binTree)
 }
 
 // 广度优先，不能用递归，用队列
-// 可确定二叉树各节点所在的层次level
 void BreadthFirstTraverse(BinTreeNode* root)
 {
 	queue<BinTreeNode *> nodeQueue; // STL中的queue
-	int level = 0;
 	nodeQueue.push(root);
 	BinTreeNode *tmpNode = NULL;
-	// 入一个空节点，表示root层结束; 在引入level值，实际上可以不需要用空节点了
-	// 但作为练习目的，此段代码保留
+	// 入一个空节点，表示root层结束
 	nodeQueue.push(tmpNode);
 	BinTreeNode *node;
 	while (!nodeQueue.empty())
@@ -107,14 +96,11 @@ void BreadthFirstTraverse(BinTreeNode* root)
 		if (NULL == node)
 		{
 			cout << endl;
-			++level;
 			if (NULL != nodeQueue.front())
 				nodeQueue.push(tmpNode); // 入一个空节点，表示当前层结束
 			continue;
 		}
 		// if (NULL != node)
-		node->level = level;
-		cout << node->datum << " level: " << node->level << " pos: " << node->pos << " ";
 		if (NULL != node->lChild)
 			nodeQueue.push(node->lChild); // 左节点入队
 		if (NULL != node->rChild)
